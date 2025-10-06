@@ -9,17 +9,6 @@ index = pc.Index(host=os.getenv("PINECONE_HOST"))
 
 
 def search_and_fetch( query_text: str, top_k: int = 3):
-    """
-    Runs a semantic search in Pinecone and fetches related nodes from Neo4j.
-    
-    Args:
-        neo4j_query (str): Cypher query to fetch nodes from Neo4j.
-        query_text (str): Natural language query to search embeddings.
-        top_k (int): Number of top Pinecone results to return.
-    
-    Returns:
-        list[dict]: A list of search results with Pinecone metadata and Neo4j nodes.
-    """
     # 1. Create embedding for the query
     query_embedding = embedding_model.embed_query(query_text)
 
